@@ -1,0 +1,23 @@
+<%- include('./partials/header'); %>
+<body class="h-screen w-screen flex items-center bg-[#FCBE1E] justify-center">
+    <div class="relative h-full w-full overflow-hidden">
+      <!-- Full-screen Image with hidden rounded corners -->
+      <div class="flex h-full relative">
+        <h1 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  text-8xl font-bold px-10">
+          Blink<span class="text-[#54B226]">it</span>
+        </h1>
+        
+      </div>
+  
+      <!-- Button at the Bottom -->
+      <div class="absolute inset-x-0 bottom-0 w-full flex justify-center mb-16 px-4">
+        <a href="/auth/google"
+           class="bg-white text-black font-semibold py-3 px-6 rounded-lg hover:bg-yellow-400 transition duration-300 text-sm sm:text-base md:text-lg text-center">
+          Continue with Google
+        </a>
+      </div>
+    </div>
+  </body>
+  
+
+    <%- include('./partials/footer'); %>
