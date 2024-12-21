@@ -26,6 +26,7 @@ const paymentSchema = new mongoose.Schema({
     default: 'pending',
   },
 }, { timestamps: true });
+
 // Joi Validation Schema for Payment
 const joiPaymentSchema = Joi.object({
   order: Joi.string().required(),

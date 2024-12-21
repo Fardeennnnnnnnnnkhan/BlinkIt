@@ -42,11 +42,11 @@
 <body>
 
     <div id="inputs">
-        <form method="post" action="/order/address/<%= orderid %>">
+        <form method="post" action="/products">
             <label for="end">Destination:</label>
             <input type="text" name="address" id="end" placeholder="Enter destination">
             <div id="suggestions" class="autocomplete-suggestions"></div>
-            <input type="submit" value="get order">
+            <input  type="submit" value="get order">
         </form>
     </div>
 
@@ -124,7 +124,6 @@
                 return;
             }
 
-            // Remove any existing routing control
             if (window.routingControl) {
                 map.removeControl(window.routingControl);
             }

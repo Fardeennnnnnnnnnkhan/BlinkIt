@@ -3,6 +3,10 @@ const Joi = require('joi');
 
 // Mongoose Order Schema
 const orderSchema = mongoose.Schema({
+  orderid : {
+    type : String,
+    required : true,
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user',
@@ -22,7 +26,6 @@ const orderSchema = mongoose.Schema({
   },
   address: {
     type: String,
-    required: true,
     minlength: 5,
     maxlength: 100,
   },

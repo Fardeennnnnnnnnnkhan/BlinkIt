@@ -39,7 +39,7 @@ router.get('/', Isloggedin, async function (req, res) {
     ])
   
   
-      res.render('cart', { cart: finalarray,rnproducts : rnproducts, finalprice: finalPrice  , deliveryCharge , smartCartCharge , handlingCharge});
+      res.render('cart', { cart: finalarray,rnproducts : rnproducts, finalprice: finalPrice  , deliveryCharge , smartCartCharge , handlingCharge , userid : req.session.passport.user});
   
     } catch (err) {
       res.status(500).send(err.message);
@@ -100,4 +100,17 @@ router.get('/remove/:id' ,Isloggedin , async  function(req, res){
    await cart.save();
    res.redirect(back);
 })
+
+router.post('/remove-cart' , async function(req ,res){
+  try {
+    const userId = req.user.id; // Assuming you're using a token-based auth system
+    await CartModel.findOneAndUpdate({ user: userId }, { products: [], totalPrice: 0 });
+    return res.status(200).json({ message: "Cart cleared successfully" });
+} catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Error clearing cart" });
+}
+})
+
+
 module.exports = router;
