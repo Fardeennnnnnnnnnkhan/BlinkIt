@@ -17,11 +17,9 @@ router.post('/create/orderId', async (req, res) => {
   };
   try {
     const order = await razorpay.orders.create(options);
-    console.log('Order created successfully:', order); // Log order creation
 
     res.send(order);
-    console.log('Razorpay Key ID:', process.env.RAZORPAY_KEY_ID);
-    console.log('Razorpay Key Secret:', process.env.RAZORPAY_KEY_SECRET);
+
     const newPayment = await paymentModel.create({
       orderId: order.id,
       amount: order.amount,

@@ -1,4 +1,4 @@
-  <!-- <script> -->
+<!-- <script> -->
             // document.querySelector('.paybtn').onclick = function(e) {
             //   axios.post('/payment/create/orderId')
             //     .then(function (response) {
